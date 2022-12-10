@@ -9,4 +9,9 @@ const listContacts = async () => {
   return contacts;
 };
 
+const getContactsById = async () => {
+  const contacts = await listContacts();
+  const result = contacts.find((item) => item.id === `${contactId}`);
+  return result || null;
+};
 module.exports = { listContacts, getContactById, addContact, removeContact };
